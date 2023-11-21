@@ -2,6 +2,10 @@
 
 Scripts used across the julia-actions organisation.
 
+## Prerequisites
+- `git`
+- `jq`
+
 ## Scripts
 
 - [`build-release`](build-release): Create a release branch, build action and create/update tags based on the version specified in `package.json`.
