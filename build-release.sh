@@ -31,7 +31,7 @@ npm test
 npm run pack
 
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "${OSTYPE:}" == "darwin"* ]]; then
     sed -i '' 's/dist/!dist/g' .gitignore
 else
     sed -i 's/dist/!dist/g' .gitignore
