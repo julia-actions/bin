@@ -59,7 +59,10 @@ git commit -a -m "Add production dependencies & build"
 major_minor="$(sed 's/\.[^.]*$//' <<< "$version")"
 major="$(sed 's/\.[^.]*$//' <<< "$major_minor")"
 
-git tag "${version:?}"
+# For this tag, we intentionally do NOT force tag:
+git tag "${version:?}
+
+# For the remaining tags, we need to force tag:
 git tag -f "${major_minor:?}"
 git tag -f "${major:?}"
 git tag -f "latest"
