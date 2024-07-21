@@ -30,7 +30,12 @@ npm run build
 npm test
 npm run pack
 
-sed -i 's/dist/!dist/g' .gitignore
+
+if [[ "${OSTYPE:}" == "darwin"* ]]; then
+    sed -i '' 's/dist/!dist/g' .gitignore
+else
+    sed -i 's/dist/!dist/g' .gitignore
+fi
 git add dist
 git commit -a -m "Add production dependencies & build"
 
